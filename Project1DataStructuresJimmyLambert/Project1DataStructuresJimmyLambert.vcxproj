@@ -121,6 +121,10 @@
     <Text Include="Employee-Database.txt" />
     <Text Include="Small-Database.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Employee.cpp" />
+    <ClCompile Include="Main.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

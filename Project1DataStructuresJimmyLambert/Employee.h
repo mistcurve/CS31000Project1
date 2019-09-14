@@ -33,4 +33,4 @@ private:
 	
 };
 
-bool operator==(const Employee& p1, const Employee& p2) // test if two employees are the same. 
+bool operator==(const Employee& p1, const Employee& p2); // test if two employees are the same. 
