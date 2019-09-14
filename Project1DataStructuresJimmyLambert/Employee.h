@@ -1,4 +1,8 @@
-//Employee.h provided by Dr. Meilin Liu, and you can modify it if you want. 
+// CS3100 Data Structures and Algorithms
+// Created By James Brien Lambert
+// Professor Meilin Liu
+// 9/14/2019
+// Programming Assignment #1
 
 #define _Employee_
 
