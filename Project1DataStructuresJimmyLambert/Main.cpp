@@ -9,7 +9,7 @@
 #include <fstream>
 #include <string>
 
-#define MENU_TEXT "1. Retrieve and Write a Number of Employee Records\n2. Test to see if two employees are the same\n3. Quit"
+#define MENU_TEXT "1. Retrieve and Write a Number of Employee Records\n2. Test to see if two employees are the same\n3. Quit\n\n"
 
 using namespace std;
 
@@ -27,7 +27,14 @@ int main()
 		cin >> response;
 		if (response == 1)
 		{
+			cout << "What number of employee records to you want to display and copy?\n";
+			string s;
+			cin >> s;
+			cin >> response;
+			for (int i = 0; i < response; i++)
+			{
 
+			}
 		}
 		else if (response == 2)
 		{
