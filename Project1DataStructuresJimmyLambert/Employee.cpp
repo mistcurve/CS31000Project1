@@ -30,6 +30,8 @@ Employee::Employee(const Employee& person)
 Employee::~Employee()
 {
 	//No code needed for the destructor because no dynamic allocation.
+
+	std::cout << "\t\t**Employee Destructor Called.**\n";
 }
 
 void Employee::setFirstName(std::string first)
@@ -47,17 +49,17 @@ void Employee::setID(int IdNum)
 	this->ID = IdNum;
 }
 
-int Employee::getID()
+int Employee::getID() const
 {
 	return this->ID;
 }
 
-std::string Employee::getFirstName()
+std::string Employee::getFirstName() const
 {
 	return this->firstname;
 }
 
-std::string Employee::getLastName()
+std::string Employee::getLastName()const
 {
 	return this->lastname;
 }
@@ -72,4 +74,11 @@ std::istream& operator>>(std::istream& ins, Employee& person)
 {
 	ins >> person.firstname >> person.lastname >> person.ID;
 	return ins;
+}
+
+bool operator==(const Employee& p1, const Employee& p2)
+{
+	return p1.getFirstName() == p2.getFirstName() &&
+		p1.getLastName() == p2.getLastName() &&
+		p1.getID() == p2.getID();
 }
