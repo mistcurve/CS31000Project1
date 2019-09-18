@@ -6,9 +6,11 @@
 
 #include "Employee.h"
 
+#define INVALID_ID "\t\t**Invalid employee ID, this employee will be reported as empty.**\n"
+
 Employee::Employee()
 {
-	this->ID = 0;
+	this->ID = -1;
 	this->firstname = "no first name";
 	this->lastname = "no last name";
 }
@@ -18,6 +20,10 @@ Employee::Employee(int IdNum, std::string last, std::string first)
 	this->ID = IdNum;;
 	this->lastname = last;
 	this->firstname = first;
+	if (this->ID < 0 || this->ID > 9999999)
+	{
+		std::cout << INVALID_ID;
+	}
 }
 
 Employee::Employee(const Employee& person)
@@ -25,6 +31,10 @@ Employee::Employee(const Employee& person)
 	this->ID = person.ID;
 	this->lastname = person.lastname;
 	this->firstname = person.firstname;
+	if (this->ID < 0 || this->ID > 9999999)
+	{
+		std::cout << INVALID_ID;
+	}
 }
 
 Employee::~Employee()
@@ -56,7 +66,7 @@ int Employee::getID() const
 
 bool Employee::isEmpty() const
 {
-	return this->firstname == "no first name" || this->lastname == "no last name" || this->ID == 0;
+	return this->firstname == "no first name" || this->lastname == "no last name" || this->ID < 0 || this->ID > 9999999;
 }
 
 std::string Employee::getFirstName() const
@@ -78,6 +88,10 @@ std::ostream& operator<<(std::ostream& outs, Employee& person)
 std::istream& operator>>(std::istream& ins, Employee& person)
 {
 	ins >> person.firstname >> person.lastname >> person.ID;
+	if (person.ID < 0 || person.ID > 9999999)
+	{
+		std::cout << INVALID_ID;
+	}
 	return ins;
 }
 
