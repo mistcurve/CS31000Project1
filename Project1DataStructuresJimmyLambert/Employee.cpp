@@ -54,6 +54,11 @@ int Employee::getID() const
 	return this->ID;
 }
 
+bool Employee::isEmpty() const
+{
+	return this->firstname == "no first name" || this->lastname == "no last name" || this->ID == 0;
+}
+
 std::string Employee::getFirstName() const
 {
 	return this->firstname;
@@ -66,7 +71,7 @@ std::string Employee::getLastName()const
 
 std::ostream& operator<<(std::ostream& outs, Employee& person)
 {
-	outs << person.getFirstName() << " " << person.getLastName() << " " << person.getID();
+	outs << person.getFirstName() << " " << person.getLastName() << " " << person.getID() << "\n";
 	return outs;
 }
 

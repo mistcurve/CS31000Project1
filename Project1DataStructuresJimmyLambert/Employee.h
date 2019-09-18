@@ -21,6 +21,7 @@ public:
 	void setLastName(std::string last);
 	void setID(int IdNum);
 	int getID() const;
+	bool isEmpty() const;
 	std::string getFirstName() const;
 	std::string getLastName() const;
 	friend std::ostream& operator<<(std::ostream &outs, Employee &person);
@@ -30,7 +31,6 @@ private:
 	std::string lastname;
 	std::string firstname;
 
-	
 };
 
 bool operator==(const Employee& p1, const Employee& p2); // test if two employees are the same. aka, first = first, last = last, ID = ID
