@@ -27,7 +27,14 @@ int main()
 	Employee eOriginal(1010, "Lambert", "James");
 	Employee eCopy(eOriginal);
 	cout << "eOriginal: " << eOriginal;
-	cout << "eCopy: " << eCopy << "\nProceding with rest of program...\n\n\n";
+	cout << "eCopy: " << eCopy;
+	cout << "Testing all set functions:\n";
+	eOriginal.setID(1011);
+	eOriginal.setID(-1);
+	eOriginal.setLastName("Davidson");
+	eOriginal.setFirstName("Sabrielle");
+	cout << eOriginal << "\nAll other methods are tested with the standard menu program.\nProceding with rest of program...\n\n\n";
+
 
 	ifstream file;
 

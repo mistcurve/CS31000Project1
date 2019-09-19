@@ -56,7 +56,10 @@ void Employee::setLastName(std::string last)
 
 void Employee::setID(int IdNum)
 {
-	this->ID = IdNum;
+	if (IdNum >= 0 && IdNum < 9999999)
+		this->ID = IdNum;
+	else
+		std::cout << "\t\t**Not setting IdNum, invalid ID**\n";
 }
 
 int Employee::getID() const
