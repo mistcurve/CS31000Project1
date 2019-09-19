@@ -32,6 +32,13 @@ int main()
 		cout << MENU_TEXT;
 		int response = 0;
 		cin >> response;
+		while (cin.fail())
+		{
+			cout << "Invalid input, please enter an integer from 1-3\n";
+			cin.clear();
+			cin.ignore();
+			cin >> response;
+		}
 		switch (response)
 		{
 		case 1://get number, copy and print that many from the file
@@ -44,7 +51,7 @@ int main()
 			done = true;
 			break;
 		default:
-			cout << "Invalid Input Options, Please Try Again.\n\n";
+			cout << "Invalid Integer, Please Try Again with a value 1-3.\n\n";
 			break;
 		}
 	}
@@ -57,6 +64,14 @@ void readNumberOfEmployees()
 	int response;
 	cout << "What number of employee records to you want to display and copy?\n";
 	cin >> response;
+
+	while (cin.fail() || response < 0)
+	{
+		cout << "Invalid input, please enter a positive integer\n";
+		cin.clear();
+		cin.ignore();
+		cin >> response;
+	}
 	{
 		ifstream infile;
 		infile.open(SMALL_DATABASE, ios::in);
@@ -68,14 +83,11 @@ void readNumberOfEmployees()
 		{
 			Employee temp;
 			infile >> temp;
-			if (!temp.isEmpty())
+			cout << temp;
+			outfile << temp;
+			if (infile.eof())
 			{
-				cout << temp;
-				outfile << temp;
-			}
-			else
-			{
-				cout << "No more employees to read in the file. stopping action.\n" << i-1 << " Employees read and wrote.\n";
+				cout << "No more employees to read in the file. stopping action.\n" << i + 1 << " Employees read and wrote.\n";
 				break;
 			}
 		}
