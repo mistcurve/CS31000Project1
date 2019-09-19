@@ -1,4 +1,8 @@
-This program was created by James Lambert for CS3100
+// CS3100 Data Structures and Algorithms
+// Created By James Brien Lambert
+// Professor Meilin Liu
+// 9/14/2019
+// Programming Assignment #1
 
 This is the expected output for the first part of the program, it ensures that the copy constructor and the regular constructor with parameters are working correctly. It also tests to make sure that all setXXX() functions are working correctly. The "**Not setting IdNum, invalid ID**" message being displayed is intentional, this means that the validation for an incorrect ID in SetId worked correctly. Again, this is the expected output:
 
