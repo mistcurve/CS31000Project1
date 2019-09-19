@@ -23,6 +23,12 @@ void testTwoEmployees();
 //This function needs to test each thing atleast once.
 int main()
 {
+	cout << "Testing Employee Parameter and Copy Constructor:\n";
+	Employee eOriginal(1010, "Lambert", "James");
+	Employee eCopy(eOriginal);
+	cout << "eOriginal: " << eOriginal;
+	cout << "eCopy: " << eCopy << "\nProceding with rest of program...\n\n\n";
+
 	ifstream file;
 
 	bool done = false;
