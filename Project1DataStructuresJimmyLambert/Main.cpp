@@ -87,7 +87,7 @@ void readNumberOfEmployees()
 	}
 	{
 		ifstream infile;
-		infile.open(SMALL_DATABASE, ios::in);
+		infile.open(BIG_DATABASE, ios::in);
 
 		ofstream outfile;
 		outfile.open("out_jameslambert.txt", ios::out);
